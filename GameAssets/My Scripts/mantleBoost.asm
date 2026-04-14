@@ -13,9 +13,17 @@ LDX player1_object
 
     ChangeActionStep player1_object, #$04
 
-    LDA Object_direction,x
-    AND #%00000001
+    LDA gamepad
+    AND #%11000000
+    CMP #%10000000
     BEQ +mantleRightMove
+
+    LDA gamepad
+    AND #%11000000
+    CMP #%01000000
+    BEQ +mantleLeftMove
+
+    RTS
 
 +mantleLeftMove
     LDA Object_x_hi,x

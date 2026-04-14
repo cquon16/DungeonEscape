@@ -33,7 +33,7 @@ LDX player1_object
 +slideLeftMove
     LDA Object_x_hi,x
     SEC
-    SBC #$04
+    SBC #$02
     STA Object_x_hi,x
 
     LDA mySlide
@@ -45,7 +45,7 @@ LDX player1_object
 +slideRightMove
     LDA Object_x_hi,x
     CLC
-    ADC #$04
+    ADC #$02
     STA Object_x_hi,x
 
     LDA mySlide
@@ -69,7 +69,7 @@ LDX player1_object
 +checkStartSlide
     LDA Object_x_hi,x
     CLC
-    ADC #$08
+    ADC #$04
     STA temp
     JSR getPointColTable
 
